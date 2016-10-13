@@ -10,6 +10,7 @@ import UIKit
 
 class goalsViewController: UITableViewController {
     
+    @IBOutlet weak var addGoalBarButton: UIBarButtonItem!
     
     
     // Data
@@ -33,6 +34,12 @@ class goalsViewController: UITableViewController {
 
         configureTableView()
         
+        
+        if self.goalTitles.count == 0 {
+            
+            self.addGoalBarButton.accessibilityElementsHidden = true
+            
+        } 
         
         
         
