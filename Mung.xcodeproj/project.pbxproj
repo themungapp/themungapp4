@@ -56,6 +56,7 @@
 		8778FFDF1DAF31AA001886DF /* pro5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8778FFDA1DAF31AA001886DF /* pro5.jpg */; };
 		8778FFE11DAF3464001886DF /* pro4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8778FFE01DAF3464001886DF /* pro4.jpg */; };
 		8778FFE31DAF4083001886DF /* pic4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8778FFE21DAF4083001886DF /* pic4.jpg */; };
+		DB6C1A161DAFD0EB00CB9DBA /* goalClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6C1A151DAFD0EB00CB9DBA /* goalClass.swift */; };
 		FDFB55DB26F32534D9DE305E /* Pods_Mung.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962E024652B66E7D87DFB150 /* Pods_Mung.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +116,7 @@
 		8778FFE21DAF4083001886DF /* pic4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic4.jpg; sourceTree = "<group>"; };
 		962E024652B66E7D87DFB150 /* Pods_Mung.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mung.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4351F176F507CA96369A38 /* Pods-Mung.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mung.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mung/Pods-Mung.release.xcconfig"; sourceTree = "<group>"; };
+		DB6C1A151DAFD0EB00CB9DBA /* goalClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goalClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 				8778FFC61DAF146C001886DF /* sparecode.swift */,
 				876CB2221D9F1A5F00BE5D08 /* AppDelegate.swift */,
 				8758D8C41DAF828E006DA5D0 /* userClass.swift */,
+				DB6C1A151DAFD0EB00CB9DBA /* goalClass.swift */,
 				8778FFB01DAE8D31001886DF /* UI Elements */,
 				87208FA71DA24557007869AC /* Tab 1- Discover Tab */,
 				87208FA61DA24532007869AC /* Tab 2- Goals Tab */,
@@ -432,6 +435,7 @@
 				8702B8EB1DA73CBA00F7D23D /* SimpleTabItem.swift in Sources */,
 				87208F9F1D9F5140007869AC /* discoverViewController.swift in Sources */,
 				8702B8E51DA6DBF100F7D23D /* spareViewController.swift in Sources */,
+				DB6C1A161DAFD0EB00CB9DBA /* goalClass.swift in Sources */,
 				8778FFB41DAE8FD9001886DF /* tabBarViewController.swift in Sources */,
 				8778FFC71DAF146C001886DF /* sparecode.swift in Sources */,
 				8702B8DD1DA5B3D400F7D23D /* detailGoalViewController.swift in Sources */,

@@ -39,7 +39,7 @@ class goalsViewController: UITableViewController {
             
             self.addGoalBarButton.accessibilityElementsHidden = true
             
-        } 
+        }
         
         
         
