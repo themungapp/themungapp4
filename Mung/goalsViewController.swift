@@ -34,7 +34,7 @@ class goalsViewController: UITableViewController {
 
         configureTableView()
         
-    
+
     }
     
     
