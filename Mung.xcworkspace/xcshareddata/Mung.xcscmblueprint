@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F773515E770EF5F658931716045A28D00F965A57",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F773515E770EF5F658931716045A28D00F965A57" : 9223372036854775807,
+    "582D88248D24B2B968B5295CFFE36796A0A94FE3" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D76B855C-0D17-4E7E-A2AC-BA15A34D9A63",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F773515E770EF5F658931716045A28D00F965A57" : "themungapp4\/",
+    "582D88248D24B2B968B5295CFFE36796A0A94FE3" : "themungapp4\/Pods\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Mung",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Mung.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/themungapp\/themungapp3",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "582D88248D24B2B968B5295CFFE36796A0A94FE3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/themungapp\/themungapp4.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F773515E770EF5F658931716045A28D00F965A57"
+    }
+  ]
+}

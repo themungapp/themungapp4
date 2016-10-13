@@ -10,7 +10,8 @@ import UIKit
 
 class goalsViewController: UITableViewController {
     
-    
+    @IBOutlet var addGoalBarButton: UIBarButtonItem!
+
     
     // Data
     
@@ -33,15 +34,11 @@ class goalsViewController: UITableViewController {
 
         configureTableView()
         
-        
-        
-        
+    
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
+    
 
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
