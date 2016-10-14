@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import Foundation
+import Firebase
+import FirebaseAuth
+
+
 
 class User {
     
     var userID: String
     var userName: String
+    var userEmail: String
     var userEmailVerified: Bool
     var userPassword: String
     var userJoinTimeStamp: String
@@ -21,12 +27,26 @@ class User {
     var userGoals: NSArray  // {"chinatrip123": true, "playstation": true, "yeezes": true, "hermesbracelet": true }
     var userImage: String
     
-    init(userID: String, userName: String, userEmailVerified: Bool, userPassword:String, userJoinTimeStamp: String, userLocation: String, userLastLoginTimeStamp: String,
+    
+    //authData variable lives globally
+    
+    /*
+    init(authData: FIRUser) {
+        userID = authData.uid
+        userEmail = authData.email!
+        userEmailVerified = authData.isEmailVerified
+        userName = authData.displayName!
+    }
+    */
+    
+    // if authData exists
+    init(authData: FIRUser, userID: String, userName: String, userEmail: String, userEmailVerified: Bool, userPassword:String, userJoinTimeStamp: String, userLocation: String, userLastLoginTimeStamp: String,
          userVerified: Bool, userGoals: NSArray, userImage: String){
         
-        self.userID = userID
-        self.userName = userName
-        self.userEmailVerified = userEmailVerified
+        self.userID = authData.uid
+        self.userName = authData.displayName!
+        self.userEmail = authData.email!
+        self.userEmailVerified = authData.isEmailVerified
         self.userPassword = userPassword
         self.userJoinTimeStamp = userJoinTimeStamp
         self.userLocation = userLocation
@@ -36,5 +56,24 @@ class User {
         self.userImage = userImage
         
    }
+    
+    // if authData doesn't exist
+    init(userID: String, userName: String, userEmail: String, userEmailVerified: Bool, userPassword:String, userJoinTimeStamp: String, userLocation: String, userLastLoginTimeStamp: String,
+         userVerified: Bool, userGoals: NSArray, userImage: String){
+        
+        self.userID = userID
+        self.userName = userName
+        self.userEmail = userEmail
+        self.userEmailVerified = userEmailVerified
+        self.userPassword = userPassword
+        self.userJoinTimeStamp = userJoinTimeStamp
+        self.userLocation = userLocation
+        self.userLastLoginTimeStamp = userLastLoginTimeStamp
+        self.userVerified = userVerified
+        self.userGoals = userGoals
+        self.userImage = userImage
+        
+    }
+
 }
 

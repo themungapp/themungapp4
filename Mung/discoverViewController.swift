@@ -8,9 +8,14 @@
 
 import UIKit
 import Parse
-
+import FirebaseDatabase
+import FirebaseAuth
 
 class discoverViewController: UITableViewController {
+    
+    var dbRef:FIRDatabaseReference!
+    //dbRef = FIRDatabase.database().reference()
+    
     
     
     var goalImages = ["pic1.png", "pic2.png", "pic3.png", "pic4.jpg", "pic5.jpg"]
@@ -27,6 +32,7 @@ class discoverViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
 
         for family: String in UIFont.familyNames
         {
@@ -37,13 +43,49 @@ class discoverViewController: UITableViewController {
             }
         }
         
-        
+        configureDatabaseforFirstLoad()
         
         
         
     }
     
+    func configureDatabaseforFirstLoad() {
+        let dbRef = FIRDatabase.database().reference()
+        
+        // start by fetching first 10 most liked goals and fetch another 10 for each scroll down
+        
+        var goalImages = Array.self
+        var goalTitles = Array.self
+        var goalAuthorProfiles = Array.self
+        var goalAuthorNames = Array.self
+        
+        
+        var topGoals =
+            dbRef.child("goals").queryOrdered(byChild: "goalLikeCount").queryLimited(toLast: 10).observe(.value, with: { (snapshot:FIRDataSnapshot) in
+                let enumerator = snapshot.children
+                while let rest = enumerator.nextObject() as? FIRDataSnapshot {
+                    let lastKnownKeyDict =  rest.value as? [String: Any]
+                    let lastKnownKey = lastKnownKeyDict?["goalLikeCount"]}})
+        
+                    let goalUser = lastKnownKeyDict?["goalAuthor"] as? String
+                    goalAuthorNames.append(goalUser)
+        
+                    let goalTitle = lastKnownKeyDict?["goalName"] as? String
+                    goalTitles.append(goalTitle)
+        
+                    let goalImage = lastKnownKeyDict?["goalImage"]["goalImage1"] as? String
+                    goalImages.append(goalImage)
+        
+                    //get user profile image
+                    let userImage = dbRef.child("users").child(goalUser).value("userImage")
+                    goalAuthorProfiles.append(goalImage)
 
+    
+    
+    }
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -265,3 +307,10 @@ class discoverViewController: UITableViewController {
     */
 
 }
+
+
+
+
+
+
+

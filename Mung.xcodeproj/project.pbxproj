@@ -255,9 +255,13 @@
 				8758D8CE1DB0FE90006DA5D0 /* TestViewController.swift */,
 				8778FFC61DAF146C001886DF /* sparecode.swift */,
 				876CB2221D9F1A5F00BE5D08 /* AppDelegate.swift */,
+<<<<<<< HEAD
 				8758D8C41DAF828E006DA5D0 /* userClass.swift */,
 				DB6C1A151DAFD0EB00CB9DBA /* goalClass.swift */,
 				875823CA1DB16D710087345A /* Users */,
+=======
+				DB6C1A171DAFE0FC00CB9DBA /* Classes */,
+>>>>>>> 7a22db57a6fbe9c43bee4e7e8d4f5fc8dd0055bb
 				8778FFB01DAE8D31001886DF /* UI Elements */,
 				87208FA71DA24557007869AC /* Tab 1- Discover Tab */,
 				87208FA61DA24532007869AC /* Tab 2- Goals Tab */,
@@ -312,6 +316,15 @@
 				8778FFDA1DAF31AA001886DF /* pro5.jpg */,
 			);
 			name = "Author Profiles";
+			sourceTree = "<group>";
+		};
+		DB6C1A171DAFE0FC00CB9DBA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8758D8C41DAF828E006DA5D0 /* userClass.swift */,
+				DB6C1A151DAFD0EB00CB9DBA /* goalClass.swift */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

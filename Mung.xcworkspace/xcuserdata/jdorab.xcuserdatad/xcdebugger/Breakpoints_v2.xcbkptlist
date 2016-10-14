@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mung/userClass.swift"
-            timestampString = "498064755.016548"
+            timestampString = "498098698.548174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "init(userID:userName:userEmailVerified:userPassword:userJoinTimeStamp:userLocation:userLastLoginTimeStamp:userVerified:userGoals:userImage:)"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "init(userID:userName:userEmail:userEmailVerified:userPassword:userJoinTimeStamp:userLocation:userLastLoginTimeStamp:userVerified:userGoals:userImage:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,124 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mung/userClass.swift"
-            timestampString = "498064770.323625"
+            timestampString = "498098698.548174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "init(userID:userName:userEmailVerified:userPassword:userJoinTimeStamp:userLocation:userLastLoginTimeStamp:userVerified:userGoals:userImage:)"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "init(userID:userName:userEmail:userEmailVerified:userPassword:userJoinTimeStamp:userLocation:userLastLoginTimeStamp:userVerified:userGoals:userImage:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mung/discoverViewController.swift"
+            timestampString = "498098698.548174"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "configureDatabaseforFirstLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mung/userClass.swift"
+            timestampString = "498098698.548174"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "init(authData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mung/discoverViewController.swift"
+            timestampString = "498092394.33557"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mung/discoverViewController.swift"
+            timestampString = "498101379.817853"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "configureDatabaseforFirstLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mung.discoverViewController.configureDatabaseforFirstLoad () -&gt; ()"
+                  moduleName = "Mung"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jdorab/Documents/themungapp4/Mung/discoverViewController.swift"
+                  timestampString = "498101379.96581"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "131">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Mung.discoverViewController.(configureDatabaseforFirstLoad () -&gt; ()).(closure #1)"
+                  moduleName = "Mung"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jdorab/Documents/themungapp4/Mung/discoverViewController.swift"
+                  timestampString = "498101379.969746"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mung/discoverViewController.swift"
+            timestampString = "498101385.08251"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "configureDatabaseforFirstLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
