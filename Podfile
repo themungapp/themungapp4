@@ -13,6 +13,15 @@ target 'Mung' do
 pod 'KVOController'
 pod 'RAMAnimatedTabBarController', "~> 2.0.2" 
 pod 'Firebase/Core'
+pod 'Firebase/Database'
+pod 'Firebase/AdMob'	
+pod 'Firebase/Messaging'	
+pod 'Firebase/Invites'	
+pod 'Firebase/DynamicLinks'	
+pod 'Firebase/Crash'	
+pod 'Firebase/RemoteConfig'	
+pod 'Firebase/Auth'	
+pod 'Firebase/Storage'
 
 
 end
