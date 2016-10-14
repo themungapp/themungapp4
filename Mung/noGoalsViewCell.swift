@@ -11,6 +11,7 @@ import UIKit
 class noGoalsViewCell: UITableViewCell {
     
     
+    @IBOutlet var closeButton: UIButton!
 
     @IBOutlet weak var getStartedButton: UIButton!
     @IBOutlet weak var getStartedMessage: UILabel!

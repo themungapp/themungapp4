@@ -9,35 +9,80 @@
 import UIKit
 
 
-class meViewController: UIViewController, SimpleTabsDelegate, UITableViewDataSource, UITableViewDelegate  {
-    
-    //Author Information
-    
+
+let offset_HeaderStop:CGFloat = 190.0 // At this offset the Header stops its transformations
+
+//Author Information
+
+class likedGoals {
     
     var goalImages = ["pic1.png", "pic3.png", "pic4.jpg", ]
     var goalTitles = ["Paris Summer Vacation", "Fashion Photography Equipment", "Summer 18 Gap Year Fund" ]
     var goalAuthorProfiles = ["pro1.jpg", "pro3.jpg", "pro4.jpg"]
     var goalAuthorNames = ["Amani Roy", "Jaslene Proctor", "Desmond Kramer"]
+    var likedGoals = ["Amani Roy", "Jaslene Proctor", "Desmond Kramer"]
+    
+}
+
+class myGoals {
+    
+    var goalImages = ["pic5.jpg", ]
+    var goalTitles = ["Pilot School"]
+    var goalAuthorProfiles = ["pro5.jpg"]
+    var goalAuthorNames = ["Paige Richards"]
+    var likedGoals = ["Amani Roy"]
+    
+}
+
+
+
+class meViewController: UIViewController, SimpleTabsDelegate, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
+    
+ 
+    
+    
     var liked = false
     
-    var header : StretchHeader!
+    
+    
+    enum tablesForTabs {
+        case likedGoals, myGoals
+    }
+    
+    
+    var contentToDisplay : tablesForTabs = .likedGoals
     var vc:SimpleTabsViewController!
     let tabContainerView = UIView()
 
+
     @IBOutlet weak var tableView: UITableView!
+    let header = UIView()
+    
+    @IBOutlet var profileView: UIView!
+    @IBOutlet var segmentView: UIView!
+    @IBOutlet var profileImage: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
+     
 //        tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.dataSource = self
         tableView.delegate = self
-        view.addSubview(tableView)
+        
         setupHeaderView()
+        
+        
+        
+        
+        
+        
+        
+        
         //Tabs Confiigure
         
         let tab1 = SimpleTabItem(title:"LIKED", count: 3)
-        let tab2 = SimpleTabItem(title:"INVESTED", count: 2)
+        let tab2 = SimpleTabItem(title:"GOALS", count: 2)
         let tab3 = SimpleTabItem(title:"FOLLOWERS", count: 0)
         let tab4 = SimpleTabItem(title:"FOLLOWING", count: 0)
         vc = SimpleTabsViewController.create(self, baseView: tabContainerView, delegate: self, items: [tab1,tab2,tab3,tab4])
@@ -48,7 +93,9 @@ class meViewController: UIViewController, SimpleTabsDelegate, UITableViewDataSou
         vc.setTabTitleFont(UIFont(name: "Proxima Nova Soft", size: 12 )!)
         vc.setNumberFont(UIFont(name: "Proxima Nova Soft", size: 14 )!)
         
-   
+     
+
+ 
         
     
     }
@@ -58,22 +105,13 @@ class meViewController: UIViewController, SimpleTabsDelegate, UITableViewDataSou
     func setupHeaderView() {
         
     
-        
-        let options = StretchHeaderOptions()
-        options.position = .fullScreenTop
-        
-        header = StretchHeader()
-        header.stretchHeaderSize(headerSize: CGSize(width: view.frame.size.width, height: 230),
-                                 imageSize: CGSize(width: view.frame.size.width, height: 200),
-                                 controller: self,
-                                 options: options)
-        header.imageView.backgroundColor = UIColor.clear
-//        header.imageView.image = UIImage(named: "profile.jpg")
-        
+
         //Measurements 
-        
-        let headerWidth = header.imageView.frame.width
-        let headerHeight = header.imageView.frame.height
+        header.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200)
+        tableView.contentInset = UIEdgeInsetsMake(header.frame.height, 0, 0, 0)
+        header.backgroundColor = UIColor.white
+        let headerWidth = header.frame.width
+        let headerHeight = header.frame.height
         let headerWidthCenter = headerWidth / 2
         let headerHeightCenter = headerHeight / 2
         //  Add Profile Image
@@ -93,7 +131,7 @@ class meViewController: UIViewController, SimpleTabsDelegate, UITableViewDataSou
         
         let userName = UILabel()
         let lineHeight = userName.font.lineHeight
-        userName.frame = CGRect(x: labelHalfWayPoint , y: headerHeight - 80 , width: headerWidth - 20, height: 21)
+        userName.frame = CGRect(x: labelHalfWayPoint , y: headerHeight - 120 , width: headerWidth - 20, height: 21)
         userName.font = UIFont(name: "Proxima Nova Soft", size: 20 )
         userName.textColor = UIColor(red:0.17, green:0.17, blue:0.17, alpha:1.0)
         userName.textAlignment = .center
@@ -101,18 +139,16 @@ class meViewController: UIViewController, SimpleTabsDelegate, UITableViewDataSou
         userName.lineBreakMode = .byWordWrapping
         userName.numberOfLines = 0
         header.addSubview(userName)
-        
-        print("PRINT LINEHEIGHT")
-        print(lineHeight)
-        
-  
-        tabContainerView.frame = CGRect(x: 0, y: headerHeight - 40, width: headerWidth, height: 80)
+        tabContainerView.frame = CGRect(x: 0, y: headerHeight - 80, width: headerWidth, height: 80)
         header.addSubview(tabContainerView)
-    
-        
-  
+        self.view.addSubview(header)
 
-        tableView.tableHeaderView = header
+        
+        self.view.insertSubview(tableView, belowSubview: header)
+
+        
+        
+        
     }
 
 
@@ -129,17 +165,45 @@ class meViewController: UIViewController, SimpleTabsDelegate, UITableViewDataSou
     // MARK: - ScrollView Delegate
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        header.updateScrollViewOffset(scrollView)
+  
+        let offset = scrollView.contentOffset.y + header.bounds.height
         
-//        // NavigationHeader alpha update
-//        let offset : CGFloat = scrollView.contentOffset.y
-//        if (offset > 50) {
-//            let alpha : CGFloat = min(CGFloat(1), CGFloat(1) - (CGFloat(50) + (navigationView.frame.height) - offset) / (navigationView.frame.height))
-//            navigationView.alpha = CGFloat(alpha)
-//            
-//        } else {
-//            navigationView.alpha = 0.0;
-//        }
+        var headerTransform = CATransform3DIdentity
+        
+        
+        // PULL DOWN -----------------
+        
+        if offset < 0 {
+            
+            let headerScaleFactor:CGFloat = -(offset) / header.bounds.height
+            let headerSizevariation = ((header.bounds.height * (1.0 + headerScaleFactor)) - header.bounds.height)/2
+            headerTransform = CATransform3DTranslate(headerTransform, 0, headerSizevariation, 0)
+            headerTransform = CATransform3DScale(headerTransform, 1.0 + headerScaleFactor, 1.0 + headerScaleFactor, 0)
+            
+            // Hide views if scrolled super fast
+            header.layer.zPosition = 0
+            
+        }
+            
+        // SCROLL UP/DOWN ------------
+            
+        else {
+            
+            // Header -----------
+            
+            
+            headerTransform = CATransform3DTranslate(headerTransform, 0, max(-offset_HeaderStop, -offset), 0)
+            
+            
+        }
+        
+        // Apply Transformations
+        header.layer.transform = headerTransform
+
+
+        
+        
+        
     }
     
     // MARK: - Table view data source
@@ -150,12 +214,29 @@ class meViewController: UIViewController, SimpleTabsDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return goalImages.count
+        
+        switch contentToDisplay {
+            case .likedGoals:
+            
+                let liked = likedGoals().likedGoals.count
+            
+                return liked
+            
+            case .myGoals:
+            
+                let goals = myGoals().likedGoals.count
+            
+                return goals
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let getLikedGoals = likedGoals()
+        let getMyGoals = myGoals()
+        
 
-       
         //Get Cell and Index
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "goal", for: indexPath) as! goalViewCell
@@ -173,12 +254,31 @@ class meViewController: UIViewController, SimpleTabsDelegate, UITableViewDataSou
         cell.overlayGradient.frame = CGRect(x: 0, y: 0, width: width, height: 300)
         cell.goalImage.layer.insertSublayer(cell.overlayGradient, at: 0)
         
-        //Configure outlets
         
-        cell.goalAuthorName.setTitle(goalAuthorNames[indexRow], for: .normal)
-        cell.goalAuthorProfile.setImage(UIImage(named: goalAuthorProfiles[indexRow]), for: .normal)
-        cell.goalTitle.text = goalTitles[indexRow]
-        cell.goalImage.image = UIImage(named: goalImages[indexRow])
+        
+        switch contentToDisplay {
+            case .likedGoals:
+            
+            
+            //Configure outlets
+            
+            cell.goalAuthorName.setTitle(getLikedGoals.goalAuthorNames[indexRow], for: .normal)
+            cell.goalAuthorProfile.setImage(UIImage(named: getLikedGoals.goalAuthorProfiles[indexRow]), for: .normal)
+            cell.goalTitle.text = getLikedGoals.goalTitles[indexRow]
+            cell.goalImage.image = UIImage(named: getLikedGoals.goalImages[indexRow])
+            
+            case .myGoals:
+            
+            //Configure outlets
+            
+            cell.goalAuthorName.setTitle(getMyGoals.goalAuthorNames[indexRow], for: .normal)
+            cell.goalAuthorProfile.setImage(UIImage(named: getMyGoals.goalAuthorProfiles[indexRow]), for: .normal)
+            cell.goalTitle.text = getMyGoals.goalTitles[indexRow]
+            cell.goalImage.image = UIImage(named: getMyGoals.goalImages[indexRow])
+        
+        
+        }
+
         
         // Set button targets
         
@@ -292,18 +392,43 @@ class meViewController: UIViewController, SimpleTabsDelegate, UITableViewDataSou
     func tabSelected(_ tabIndex:Int){
         
         
-    if tabIndex == 0 {
+            if tabIndex == 0 {
+                
+                // Goals user has liked
             
-            
+                contentToDisplay = .likedGoals
+                
+            }  else if tabIndex  == 1 {
+    
+                // Users Goal
+        
+                contentToDisplay = .myGoals
         
         
-    }  else if tabIndex  == 1 {
+            } else if tabIndex == 2 {
+                
+                // Go to list of people that follow
+                
+                let vC = self.storyboard?.instantiateViewController(withIdentifier: "userList") as! userListViewController
+                
+                vC.viewTitle = "Follower"
     
-    
-    let vC = self.storyboard?.instantiateViewController(withIdentifier: "investViewNav")
-    self.navigationController?.present(vC!, animated: true)
-
-    }
+                self.navigationController!.pushViewController(vC, animated: true)
+                
+            } else if tabIndex == 3{
+                
+                // Go to list of people that following 
+                
+                let vC = self.storyboard?.instantiateViewController(withIdentifier: "userList") as! userListViewController
+                
+                vC.viewTitle = "Following"
+                
+                self.navigationController!.pushViewController(vC, animated: true)
+                
+                
+        }
+        
+        tableView.reloadData()
         
     }
     

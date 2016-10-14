@@ -15,8 +15,8 @@ class goalsViewController: UITableViewController {
     
     // Data
     
-    var goalImages = [String()]
-    var goalTitles = [Int()]
+    var goalImages = ["pic1.png", "pic2.png"]
+    var goalTitles = ["Hey","Huh"]
     
     
     
@@ -26,10 +26,37 @@ class goalsViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 235
     }
 
+    
+    func closeButton(){
+    
+    
+        navigationController?.setNavigationBarHidden(false, animated:true)
+        var myBackButton:UIButton = UIButton(type: UIButtonType.custom)
+        myBackButton.addTarget(self, action:#selector(dismissView), for: UIControlEvents.touchUpInside)
+        myBackButton.setTitle("", for: UIControlState.normal)
+        let image = UIImage(named: "add-icon.png")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        myBackButton.setImage(image, for: UIControlState.normal)
+        myBackButton.setTitleColor(UIColor(red:0.54, green:0.54, blue:0.54, alpha:1.0), for: UIControlState.normal)
+        myBackButton.sizeToFit()
+        var myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
+        self.navigationItem.rightBarButtonItem  = myCustomBackButtonItem
+    
+    
+    }
 
+    
+    func dismissView() {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
+        
         tableView.tableFooterView = UIView(frame: CGRect.zero)
 
         configureTableView()

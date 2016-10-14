@@ -30,7 +30,11 @@
 		87208FA11DA17C95007869AC /* goalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87208FA01DA17C95007869AC /* goalsViewController.swift */; };
 		87208FA51DA22998007869AC /* noGoalsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87208FA41DA22998007869AC /* noGoalsViewCell.swift */; };
 		87208FAC1DA26F7E007869AC /* goalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87208FAB1DA26F7E007869AC /* goalViewCell.swift */; };
+		875823CC1DB16D970087345A /* userListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875823CB1DB16D970087345A /* userListViewController.swift */; };
+		875823CE1DB16EAF0087345A /* userViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875823CD1DB16EAF0087345A /* userViewCell.swift */; };
+		875823D01DB16ED60087345A /* inviteUserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875823CF1DB16ED60087345A /* inviteUserViewCell.swift */; };
 		8758D8C51DAF828E006DA5D0 /* userClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8758D8C41DAF828E006DA5D0 /* userClass.swift */; };
+		8758D8CF1DB0FE90006DA5D0 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8758D8CE1DB0FE90006DA5D0 /* TestViewController.swift */; };
 		876CB2231D9F1A5F00BE5D08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876CB2221D9F1A5F00BE5D08 /* AppDelegate.swift */; };
 		876CB2251D9F1A5F00BE5D08 /* meViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876CB2241D9F1A5F00BE5D08 /* meViewController.swift */; };
 		876CB2281D9F1A5F00BE5D08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 876CB2261D9F1A5F00BE5D08 /* Main.storyboard */; };
@@ -85,7 +89,11 @@
 		87208FA01DA17C95007869AC /* goalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goalsViewController.swift; sourceTree = "<group>"; };
 		87208FA41DA22998007869AC /* noGoalsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = noGoalsViewCell.swift; sourceTree = "<group>"; };
 		87208FAB1DA26F7E007869AC /* goalViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goalViewCell.swift; sourceTree = "<group>"; };
+		875823CB1DB16D970087345A /* userListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userListViewController.swift; sourceTree = "<group>"; };
+		875823CD1DB16EAF0087345A /* userViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userViewCell.swift; sourceTree = "<group>"; };
+		875823CF1DB16ED60087345A /* inviteUserViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inviteUserViewCell.swift; sourceTree = "<group>"; };
 		8758D8C41DAF828E006DA5D0 /* userClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userClass.swift; sourceTree = "<group>"; };
+		8758D8CE1DB0FE90006DA5D0 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		876CB21F1D9F1A5F00BE5D08 /* Mung.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mung.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		876CB2221D9F1A5F00BE5D08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		876CB2241D9F1A5F00BE5D08 /* meViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +219,16 @@
 			name = "Tab 3- Me/Profile Tab";
 			sourceTree = "<group>";
 		};
+		875823CA1DB16D710087345A /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				875823CB1DB16D970087345A /* userListViewController.swift */,
+				875823CD1DB16EAF0087345A /* userViewCell.swift */,
+				875823CF1DB16ED60087345A /* inviteUserViewCell.swift */,
+			);
+			name = Users;
+			sourceTree = "<group>";
+		};
 		876CB2161D9F1A5F00BE5D08 = {
 			isa = PBXGroup;
 			children = (
@@ -234,10 +252,12 @@
 			isa = PBXGroup;
 			children = (
 				876CB2261D9F1A5F00BE5D08 /* Main.storyboard */,
+				8758D8CE1DB0FE90006DA5D0 /* TestViewController.swift */,
 				8778FFC61DAF146C001886DF /* sparecode.swift */,
 				876CB2221D9F1A5F00BE5D08 /* AppDelegate.swift */,
 				8758D8C41DAF828E006DA5D0 /* userClass.swift */,
 				DB6C1A151DAFD0EB00CB9DBA /* goalClass.swift */,
+				875823CA1DB16D710087345A /* Users */,
 				8778FFB01DAE8D31001886DF /* UI Elements */,
 				87208FA71DA24557007869AC /* Tab 1- Discover Tab */,
 				87208FA61DA24532007869AC /* Tab 2- Goals Tab */,
@@ -434,18 +454,22 @@
 			files = (
 				8702B8EB1DA73CBA00F7D23D /* SimpleTabItem.swift in Sources */,
 				87208F9F1D9F5140007869AC /* discoverViewController.swift in Sources */,
+				8758D8CF1DB0FE90006DA5D0 /* TestViewController.swift in Sources */,
 				8702B8E51DA6DBF100F7D23D /* spareViewController.swift in Sources */,
 				DB6C1A161DAFD0EB00CB9DBA /* goalClass.swift in Sources */,
 				8778FFB41DAE8FD9001886DF /* tabBarViewController.swift in Sources */,
+				875823D01DB16ED60087345A /* inviteUserViewCell.swift in Sources */,
 				8778FFC71DAF146C001886DF /* sparecode.swift in Sources */,
 				8702B8DD1DA5B3D400F7D23D /* detailGoalViewController.swift in Sources */,
 				87208FAC1DA26F7E007869AC /* goalViewCell.swift in Sources */,
+				875823CC1DB16D970087345A /* userListViewController.swift in Sources */,
 				87102F2A1DA479BF00E22A5A /* profileTabsViewController.swift in Sources */,
 				8702B8EA1DA73CBA00F7D23D /* SimpleTabsViewController.swift in Sources */,
 				8702B8E91DA73CBA00F7D23D /* SimpleTabsDelegate.swift in Sources */,
 				8778FFAE1DAE7809001886DF /* StretchHeaderOptions.swift in Sources */,
 				8778FFAF1DAE7809001886DF /* StretchHeader.swift in Sources */,
 				87208FA11DA17C95007869AC /* goalsViewController.swift in Sources */,
+				875823CE1DB16EAF0087345A /* userViewCell.swift in Sources */,
 				8778FFC51DAF0520001886DF /* RAMItemAnimationProtocol.swift in Sources */,
 				876CB2251D9F1A5F00BE5D08 /* meViewController.swift in Sources */,
 				87208FA51DA22998007869AC /* noGoalsViewCell.swift in Sources */,

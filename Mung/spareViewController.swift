@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+
+
 
 class MeViewController: UIViewController {
 
@@ -20,6 +23,9 @@ class MeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
+        
+        
         // Do any additional setup after loading the view.
     }
 
